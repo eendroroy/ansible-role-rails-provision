@@ -36,3 +36,5 @@
     name: eendroroy.rbenv
   vars:
     - rbenv_env: system
+    - remote_user: '{{ remote_user }}'
+    - remote_home: '{{ remote_home }}'

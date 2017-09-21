@@ -3,3 +3,5 @@ deploy_user: deployer
 deploy_home: /home/deployer
 app_name: application
 app_env: production
+remote_user: root
+remote_home: /root

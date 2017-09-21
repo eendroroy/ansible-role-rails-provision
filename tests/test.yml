@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
+  connection: local
   remote_user: root
+  become: true
   roles:
-    - ansible-role-rails-provision
-  
+    - { role: ../../ansible-role-rails-provision, remote_user: root }
