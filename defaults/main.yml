@@ -1,0 +1,4 @@
+---
+deploy_user: deployer
+app_name: application
+app_env: production
