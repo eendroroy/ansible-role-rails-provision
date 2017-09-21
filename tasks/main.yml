@@ -34,5 +34,5 @@
 - name: Install rbenv
   include_role:
     name: eendroroy.rbenv
-    vars:
-      rbenv_env: system
+  vars:
+    - rbenv_env: system
