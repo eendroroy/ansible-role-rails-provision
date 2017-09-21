@@ -1,31 +1,33 @@
 ---
+
+dist: 'trusty'
+
+env:
+  global:
+    - ANSIBLE_FORCE_COLOR: True
+    - ANSIBLE_LOG_PATH: './ansible.log'
+    - ANSIBLE_ROLES_PATH: '../'
+
 language: python
 python: "2.7"
 
-# Use the new container infrastructure
-sudo: false
+sudo: 'required'
 
-# Install ansible
 addons:
   apt:
     packages:
     - python-pip
 
 install:
-  # Install ansible
+  - |
+    if [ -f tests/requirements.yml ]; then
+      ansible-galaxy install -r tests/requirements.yml --roles-path=/home/travis/build/eendroroy
+    fi
   - pip install ansible
-
-  # Check ansible version
   - ansible --version
-
-  # Install eendroroy.rbenv
-  - ansible-galaxy install eendroroy.rbenv --roles-path=/home/travis/build/eendroroy
-
-  # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' > ansible.cfg
 
 script:
-  # Basic role syntax check
   - ansible-playbook tests/test.yml -i tests/inventory
 
 notifications:
