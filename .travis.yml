@@ -19,7 +19,7 @@ install:
   - ansible --version
 
   # Install eendroroy.rbenv
-  - ansible-galaxy install eendroroy.rbenv --roles-path=/home/travis/build
+  - ansible-galaxy install eendroroy.rbenv --roles-path=/home/travis/build/eendroroy
 
   # Create ansible.cfg with correct roles_path
   - printf '[defaults]\nroles_path=../' > ansible.cfg
