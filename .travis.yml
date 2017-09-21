@@ -19,12 +19,12 @@ addons:
     - python-pip
 
 install:
+  - pip install ansible
+  - ansible --version
   - |
     if [ -f tests/requirements.yml ]; then
       ansible-galaxy install -r tests/requirements.yml --roles-path=/home/travis/build/eendroroy
     fi
-  - pip install ansible
-  - ansible --version
   - printf '[defaults]\nroles_path=../' > ansible.cfg
 
 script:
