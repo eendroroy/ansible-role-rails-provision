@@ -24,4 +24,4 @@ galaxy_info:
     - rails
 
 dependencies:
-  - eendroroy.rbenv
+  - src: eendroroy.rbenv
