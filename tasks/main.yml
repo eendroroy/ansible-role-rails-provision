@@ -38,3 +38,5 @@
     - rbenv_env: system
     - remote_user: '{{ remote_user }}'
     - remote_home: '{{ remote_home }}'
+    - rubies:
+      - version: 2.4.1
